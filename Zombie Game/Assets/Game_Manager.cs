@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class Game_Manager : MonoBehaviour
 {
-    public GameObject camera;
+    public GameObject cam;
     public Game_over_screen GOScreen;
     public GameObject Screen;
     public GameObject end_music;
     public bool GameEnded;
     public void EndGame()
     {
-        camera.SetActive(true);
+        cam.SetActive(true);
         GameEnded = true;
         GOScreen.Setup();
         UpdateCursorState();
