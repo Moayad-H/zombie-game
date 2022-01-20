@@ -1043,6 +1043,7 @@ GameObject:
   - component: {fileID: 2138151088353780169}
   - component: {fileID: 2138151088353780172}
   - component: {fileID: 2138151088353780168}
+  - component: {fileID: 7360265885494381403}
   m_Layer: 0
   m_Name: Zombie1 1
   m_TagString: enemy
@@ -1148,13 +1149,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899edf20f6a465a4188c79dbb9911815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn: {fileID: 0}
   thePlayer: {fileID: 0}
+  GameIsOver: {fileID: 0}
   invulTime: 0.1
   hit_effect: {fileID: 198000011254678926, guid: abb9f519b142e304d9c45b56afa768bc,
     type: 3}
   health: 50
   delay: 6
   enemyDistance: 0.7
+--- !u!114 &7360265885494381403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590038858418108606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5588c255eb11e42b79588cd8c9ad0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2649457081666551452
 GameObject:
   m_ObjectHideFlags: 0

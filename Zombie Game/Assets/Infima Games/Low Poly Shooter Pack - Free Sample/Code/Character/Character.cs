@@ -152,6 +152,7 @@ namespace InfimaGames.LowPolyShooterPack
 		#endregion
 
 		#region CONSTANTS
+		public bool interacting = false;
 		public float damage = 10f;
 		public float range = 100f;
 		public Camera fpsCam;
@@ -711,7 +712,23 @@ namespace InfimaGames.LowPolyShooterPack
 					break;
 			}
 		}
+		 Damageupgrade dmg;
+		Damageupgrade dmg_can_interact;
+		
+		public void OnInteract(InputAction.CallbackContext context)
+		{
 
+			switch (context)
+			{
+				case { phase: InputActionPhase.Performed }:
+					//Play Animation.
+					if (dmg_can_interact.dmg_interact == true)
+					{
+						dmg.dmgincrease();
+					}
+					break;
+			}
+		}
 		/// <summary>
 		/// Holster.
 		/// </summary>
