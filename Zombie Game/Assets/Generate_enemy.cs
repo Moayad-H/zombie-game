@@ -5,8 +5,8 @@ using UnityEngine;
 public class Generate_enemy : MonoBehaviour
 {
     public int waveNumber = 0;
-    public int enemySpawnAmount = 0;
-    public int enemiesKiled = 0;
+    public int enemySpawnwave = 0;
+    public int enemiesKiled ;
     public GameObject theEnemy;
     public int xPos;
     public int zPos;
@@ -14,55 +14,76 @@ public class Generate_enemy : MonoBehaviour
     public GameObject Skeleton;
     public GameObject special_audio;
     SpawnPoints spawner;
+    public GameObject Cube1;
+    public GameObject Cube2;
+    public GameObject Cube3;
+    public GameObject Cube4;
+    public GameObject Cube5;
+    
+    int enemyAt1 =0;
+    int enemyAt2=0;
+    int enemyAt3=0;
+    int enemyAt4=0;
+    int enemyAt5=0;
+    int totalenemies;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawner = FindObjectOfType<SpawnPoints>();
+        
+        totalenemies = enemyAt1 + enemyAt2 + enemyAt3 + enemyAt4 + enemyAt5;
+      //  spawner = FindObjectOfType<SpawnPoints>();
         //    StartCoroutine(EnemyDrop());
         StartWave();
     }
-   
-    //private void Update()
+
+   //private void Update()
     //{
-    //    if (enemiesKiled >= enemySpawnAmount)
-    //        NextWave();
-    //}
+    //    if (enemiesKiled >= enemyCount)
+          //  NextWave();
+  //  }
+
+    public void EnemyDrop(GameObject enemy)
+    { 
+        Instantiate(enemy, Cube5.transform.position, Quaternion.identity);
+        Instantiate(enemy, Cube4.transform.position, Quaternion.identity);
+        Instantiate(enemy, Cube3.transform.position, Quaternion.identity);
+        Instantiate(enemy, Cube2.transform.position, Quaternion.identity);
+        Instantiate(enemy, Cube1.transform.position, Quaternion.identity);
+        
+       
+    }
     private void StartWave()
     {
         waveNumber = 1;
-        enemySpawnAmount = 1;
+        enemySpawnwave = 1;
         enemiesKiled = 0;
-        for (int i = 0; i < enemySpawnAmount; i++)
-        {
-            StartCoroutine(spawner.EnemyDrop(theEnemy));
+        enemyCount += 5;
+        EnemyDrop(theEnemy);
 
-        }
+        
     
     
     }
     public void NextWave()
     {
         waveNumber++;
-        if (enemySpawnAmount < 10)
-        {
-        //    Debug.Log("Spanw amount increased");
-            enemySpawnAmount += 1;
-        }
+        enemySpawnwave += 1;
+        enemyCount += 5;
         if (waveNumber % 5 == 0)
         {
-            for (int i = 0; i < enemySpawnAmount; i++)
+            for (int i = 0; i < enemySpawnwave; i++)
             {
                 special_audio.SetActive(true);
-                StartCoroutine(spawner.EnemyDrop(Skeleton));
+                EnemyDrop(Skeleton);
 
             }
         }
         else
         {
-            for (int i = 0; i < enemySpawnAmount; i++)
+            for (int i = 0; i < enemySpawnwave; i++)
             {
-                StartCoroutine(spawner.EnemyDrop(theEnemy));
+               EnemyDrop(theEnemy);
 
             }
         }

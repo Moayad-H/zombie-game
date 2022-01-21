@@ -24,12 +24,11 @@ public class Damageupgrade : MonoBehaviour
         //if (other.tag == "Player")
         //{
 
+        dmg_interact = true;
            damage_prompt.SetActive(true);
         //    Debug.Log("Purchase damage upgrade");
-           if (interact.interacting == true)
-            {
-               dmgincrease();
-          }
+           
+          
         //}
     }
     private void OnTriggerExit(Collider other)

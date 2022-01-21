@@ -717,7 +717,8 @@ namespace InfimaGames.LowPolyShooterPack
 		
 		public void OnInteract(InputAction.CallbackContext context)
 		{
-
+			dmg = FindObjectOfType<Damageupgrade>();
+			dmg_can_interact = FindObjectOfType<Damageupgrade>();
 			switch (context)
 			{
 				case { phase: InputActionPhase.Performed }:

@@ -45,7 +45,7 @@ public class enemymove : MonoBehaviour
         zombie.enabled = !zombie.enabled;
         spawn.enemiesKiled++;
 
-        if (spawn.enemiesKiled >= spawn.enemySpawnAmount)
+        if (spawn.enemiesKiled >= spawn.enemyCount)
         {
             spawn.enemiesKiled = 0;
             //spawn.enemySpawnAmount+=5;

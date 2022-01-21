@@ -21,7 +21,7 @@ public class Zombies_alive : MonoBehaviour
 
     {
         int num;
-        num = zombies_spawned.enemySpawnAmount - zombies_killed.enemiesKiled;
+        num = zombies_spawned.enemyCount - zombies_killed.enemiesKiled;
         zombies_left.text = "Zombies alive: " + num.ToString();
     }
 }
