@@ -13,23 +13,16 @@ public class Generate_enemy : MonoBehaviour
     public int enemyCount;
     public GameObject Skeleton;
     public GameObject special_audio;
+    SpawnPoints spawner;
 
     // Start is called before the first frame update
     void Start()
     {
+        spawner = FindObjectOfType<SpawnPoints>();
         //    StartCoroutine(EnemyDrop());
         StartWave();
     }
-    IEnumerator EnemyDrop(GameObject enemy)
-    {
-        
-        
-            zPos = Random.Range(-12, 1);
-            xPos = Random.Range(-12, 20);
-            Instantiate(enemy, new Vector3(xPos, 2, zPos), Quaternion.identity);
-            yield return new WaitForSeconds(5f);
-            enemyCount++;
-    }
+   
     //private void Update()
     //{
     //    if (enemiesKiled >= enemySpawnAmount)
@@ -38,11 +31,11 @@ public class Generate_enemy : MonoBehaviour
     private void StartWave()
     {
         waveNumber = 1;
-        enemySpawnAmount = 5;
+        enemySpawnAmount = 1;
         enemiesKiled = 0;
         for (int i = 0; i < enemySpawnAmount; i++)
         {
-            StartCoroutine(EnemyDrop(theEnemy));
+            StartCoroutine(spawner.EnemyDrop(theEnemy));
 
         }
     
@@ -51,17 +44,17 @@ public class Generate_enemy : MonoBehaviour
     public void NextWave()
     {
         waveNumber++;
-        if (enemySpawnAmount < 50)
+        if (enemySpawnAmount < 10)
         {
         //    Debug.Log("Spanw amount increased");
-            enemySpawnAmount += 2;
+            enemySpawnAmount += 1;
         }
         if (waveNumber % 5 == 0)
         {
             for (int i = 0; i < enemySpawnAmount; i++)
             {
                 special_audio.SetActive(true);
-                StartCoroutine(EnemyDrop(Skeleton));
+                StartCoroutine(spawner.EnemyDrop(Skeleton));
 
             }
         }
@@ -69,7 +62,7 @@ public class Generate_enemy : MonoBehaviour
         {
             for (int i = 0; i < enemySpawnAmount; i++)
             {
-                StartCoroutine(EnemyDrop(theEnemy));
+                StartCoroutine(spawner.EnemyDrop(theEnemy));
 
             }
         }
