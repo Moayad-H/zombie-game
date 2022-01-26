@@ -31,7 +31,7 @@ public class Generate_enemy : MonoBehaviour
     void Start()
     {
         
-        totalenemies = enemyAt1 + enemyAt2 + enemyAt3 + enemyAt4 + enemyAt5;
+        //totalenemies = enemyAt1 + enemyAt2 + enemyAt3 + enemyAt4 + enemyAt5;
       //  spawner = FindObjectOfType<SpawnPoints>();
         //    StartCoroutine(EnemyDrop());
         StartWave();

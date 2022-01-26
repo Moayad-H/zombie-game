@@ -9,7 +9,7 @@ public class WaveNumber : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        round_text = GetComponent<TMPro.TextMeshProUGUI>();
+        round_text = GetComponent<TextMeshProUGUI>();
         current_round = FindObjectOfType<Generate_enemy>();
     }
 

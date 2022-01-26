@@ -8,8 +8,10 @@ public class Game_Manager : MonoBehaviour
     public GameObject Screen;
     public GameObject end_music;
     public bool GameEnded;
+    
     public void EndGame()
     {
+        
         cam.SetActive(true);
         GameEnded = true;
         GOScreen.Setup();

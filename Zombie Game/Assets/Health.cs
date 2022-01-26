@@ -7,22 +7,25 @@ public class Health : MonoBehaviour
 {
     public float PlayerHealth = 100f;
     public bool player_is_dead = false;
-    
+    Game_Manager end;
 
-    //void Start()
-    //{
-
-        
-    //}
-     void Update()
+    void Start()
+    {
+       
+        end = FindObjectOfType<Game_Manager>();
+    }
+    public GameObject zomb;
+    void Update()
     {
         
        
         if (PlayerHealth<=0)
         {
             
+          
             player_is_dead = true;
-            FindObjectOfType<Game_Manager>().EndGame();
+            end.EndGame();
+            //FindObjectOfType<Game_Manager>().EndGame();
             Destroy(gameObject);
 
 
