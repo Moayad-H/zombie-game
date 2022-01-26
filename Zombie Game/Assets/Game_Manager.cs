@@ -8,7 +8,7 @@ public class Game_Manager : MonoBehaviour
     public GameObject Screen;
     public GameObject end_music;
     public bool GameEnded;
-    
+  
     public void EndGame()
     {
         
@@ -27,8 +27,11 @@ public class Game_Manager : MonoBehaviour
     }
     public void Restart()
     {
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+       
+        //num.num = 0;
+        //Application.LoadLevel(Application.loadedLevel);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
     }
 }

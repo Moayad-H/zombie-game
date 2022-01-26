@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Generate_enemy : MonoBehaviour
 {
-    public int waveNumber = 0;
-    public int enemySpawnwave = 0;
-    public int enemiesKiled ;
+    public float waveNumber=0 ;
+    public float enemySpawnwave=0 ;
+    public float enemiesKiled ;
     public GameObject theEnemy;
     public int xPos;
     public int zPos;
@@ -19,13 +19,7 @@ public class Generate_enemy : MonoBehaviour
     public GameObject Cube3;
     public GameObject Cube4;
     public GameObject Cube5;
-    
-    int enemyAt1 =0;
-    int enemyAt2=0;
-    int enemyAt3=0;
-    int enemyAt4=0;
-    int enemyAt5=0;
-    int totalenemies;
+
 
     // Start is called before the first frame update
     void Start()
@@ -65,8 +59,9 @@ public class Generate_enemy : MonoBehaviour
     
     
     }
-    public void NextWave()
+   public void NextWave()
     {
+        
         waveNumber++;
         enemySpawnwave += 1;
         enemyCount += 5;

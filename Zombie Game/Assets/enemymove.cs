@@ -118,9 +118,11 @@ public class enemymove : MonoBehaviour
     void Update()
 
     {
-        if (GameIsOver!= true)
+
+        if (GameObject.Find("Player").GetComponent<Health>().player_is_dead == false)
         {
-            if (ColEnemy == false && GameObject.Find("Player").GetComponent<Health>().player_is_dead == false)
+
+            if (ColEnemy == false)
             {
                 transform.LookAt(player);
                 agent.SetDestination(player.transform.position);
@@ -136,6 +138,7 @@ public class enemymove : MonoBehaviour
 
                 gameObject.GetComponent<NavMeshAgent>().velocity = Vector3.zero;
             }
+
         }
     }
         }

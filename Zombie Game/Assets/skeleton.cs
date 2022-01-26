@@ -47,7 +47,7 @@ public class skeleton: MonoBehaviour
         {
             spawn.enemiesKiled = 0;
             //spawn.enemySpawnAmount+=5;
-            spawn.NextWave();
+           spawn.NextWave();
         }
 
         gameObject.GetComponent<Animator>().Play("die");
