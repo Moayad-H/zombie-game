@@ -714,9 +714,12 @@ namespace InfimaGames.LowPolyShooterPack
 		}
 		 Damageupgrade dmg;
 		Damageupgrade dmg_can_interact;
+        Planet_Information can_interact;
 		
-		public void OnInteract(InputAction.CallbackContext context)
+        public void OnInteract(InputAction.CallbackContext context)
 		{
+			bool interaction = false;
+			can_interact = FindObjectOfType<Planet_Information>();
 			dmg = FindObjectOfType<Damageupgrade>();
 			dmg_can_interact = FindObjectOfType<Damageupgrade>();
 			switch (context)
@@ -727,6 +730,21 @@ namespace InfimaGames.LowPolyShooterPack
 					{
 						dmg.dmgincrease();
 					}
+					if (interaction == true)
+					{
+						Debug.Log("f is now false");
+						can_interact.f = false;
+						
+					}
+					else if (can_interact.earth_interact == true)
+					{
+						can_interact.f = true;
+						interaction = true;
+						
+					}
+
+					
+
 					break;
 			}
 		}
