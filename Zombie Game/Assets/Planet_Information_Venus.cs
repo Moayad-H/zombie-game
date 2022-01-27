@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Planet_Information : MonoBehaviour
+public class Planet_Information_Venus : MonoBehaviour
 {
+    // Start is called before the first frame update
+    // Start is called before the first frame update
     public GameObject planet_prompt;
     public GameObject player_ui;
     InfimaGames.LowPolyShooterPack.Character player_score;
@@ -13,7 +15,7 @@ public class Planet_Information : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+
         interact = FindObjectOfType<InfimaGames.LowPolyShooterPack.Character>();
     }
     private void OnTriggerEnter(Collider other)
@@ -22,7 +24,7 @@ public class Planet_Information : MonoBehaviour
         //{
 
         planet_interact = true;
-       
+
 
         //}
     }
@@ -47,6 +49,6 @@ public class Planet_Information : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 }

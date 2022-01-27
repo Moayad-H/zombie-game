@@ -715,10 +715,25 @@ namespace InfimaGames.LowPolyShooterPack
 		 Damageupgrade dmg;
 		Damageupgrade dmg_can_interact;
         Planet_Information can_interact;
-		
+		Planet_Information_Mercury mercury_int;
+		Planet_Information_Venus venus_int;
+		Planet_Information_Mars mars_int;
+		Planet_Information_Jupiter jup_int;
+		Planet_Information_Saturn sat_int;
+		Planet_Information_Uranus uranus_int;
+		Planet_Information_Neptune nept_int;
+		Planet_Information_Pluto pluto_int;
         public void OnInteract(InputAction.CallbackContext context)
 		{
 			bool interaction = false;
+			pluto_int = FindObjectOfType<Planet_Information_Pluto>();
+			nept_int = FindObjectOfType<Planet_Information_Neptune>();
+			uranus_int = FindObjectOfType<Planet_Information_Uranus>();
+			sat_int = FindObjectOfType<Planet_Information_Saturn>();
+			jup_int = FindObjectOfType<Planet_Information_Jupiter>();
+			mars_int = FindObjectOfType<Planet_Information_Mars>();
+			venus_int = FindObjectOfType<Planet_Information_Venus>();
+			mercury_int = FindObjectOfType<Planet_Information_Mercury>();
 			can_interact = FindObjectOfType<Planet_Information>();
 			dmg = FindObjectOfType<Damageupgrade>();
 			dmg_can_interact = FindObjectOfType<Damageupgrade>();
@@ -730,24 +745,73 @@ namespace InfimaGames.LowPolyShooterPack
 					{
 						dmg.dmgincrease();
 					}
-					if (interaction == true)
-					{
-						Debug.Log("f is now false");
-						can_interact.f = false;
-						
-					}
-					else if (can_interact.earth_interact == true)
-					{
-						can_interact.f = true;
-						interaction = true;
-						
-					}
 
-					
+					if (can_interact.planet_interact == true)
+					{
+						can_interact.Show_UI();
+
+
+					}
+					else if (mercury_int.planet_interact == true)
+					{
+						mercury_int.Show_UI();
+
+					}
+					else if (venus_int.planet_interact == true)
+					{
+						venus_int.Show_UI();
+					}
+					else if (mars_int.planet_interact == true)
+					{
+						mars_int.Show_UI();
+					}
+					else if (jup_int.planet_interact == true)
+						jup_int.Show_UI();
+					else if (sat_int.planet_interact == true)
+
+						sat_int.Show_UI();
+					else if (uranus_int.planet_interact == true)
+						uranus_int.Show_UI();
+					else if (nept_int.planet_interact == true)
+						nept_int.Show_UI();
+					else if (pluto_int.planet_interact == true)
+						pluto_int.Show_UI();
 
 					break;
 			}
 		}
+		public void OnPress(InputAction.CallbackContext context)
+		{
+			pluto_int = FindObjectOfType<Planet_Information_Pluto>();
+			nept_int = FindObjectOfType<Planet_Information_Neptune>();
+			uranus_int = FindObjectOfType<Planet_Information_Uranus>();
+			sat_int = FindObjectOfType<Planet_Information_Saturn>();
+			jup_int = FindObjectOfType<Planet_Information_Jupiter>();
+			mars_int = FindObjectOfType<Planet_Information_Mars>();
+			venus_int = FindObjectOfType<Planet_Information_Venus>();
+			mercury_int = FindObjectOfType<Planet_Information_Mercury>();
+			bool interaction = false;
+			can_interact = FindObjectOfType<Planet_Information>();
+			dmg = FindObjectOfType<Damageupgrade>();
+			dmg_can_interact = FindObjectOfType<Damageupgrade>();
+			switch (context)
+			{
+				case { phase: InputActionPhase.Performed }:
+					//Play Animation.
+
+					jup_int.Close_UI();
+					can_interact.Close_UI();
+					mercury_int.Close_UI();
+					venus_int.Close_UI();
+					mars_int.Close_UI();
+					sat_int.Close_UI();
+					uranus_int.Close_UI();
+					nept_int.Close_UI();
+					pluto_int.Close_UI();
+					break;
+			}
+		}
+
 		/// <summary>
 		/// Holster.
 		/// </summary>
