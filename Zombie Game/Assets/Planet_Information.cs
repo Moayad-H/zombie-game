@@ -10,6 +10,7 @@ public class Planet_Information : MonoBehaviour
     InfimaGames.LowPolyShooterPack.Character interact;
     public bool planet_interact = false;
     public bool f = false;
+    public GameObject ui_prompt;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class Planet_Information : MonoBehaviour
         //{
 
         planet_interact = true;
-       
+        ui_prompt.SetActive(true);
 
         //}
     }
@@ -32,6 +33,7 @@ public class Planet_Information : MonoBehaviour
         planet_interact = false;
         planet_prompt.SetActive(false);
         player_ui.SetActive(true);
+        ui_prompt.SetActive(false);
     }
     public void Show_UI()
     {

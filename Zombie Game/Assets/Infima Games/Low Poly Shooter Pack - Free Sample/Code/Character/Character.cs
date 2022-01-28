@@ -723,8 +723,10 @@ namespace InfimaGames.LowPolyShooterPack
 		Planet_Information_Uranus uranus_int;
 		Planet_Information_Neptune nept_int;
 		Planet_Information_Pluto pluto_int;
+		the_sun sun_int;
         public void OnInteract(InputAction.CallbackContext context)
 		{
+			sun_int = FindObjectOfType<the_sun>();
 			bool interaction = false;
 			pluto_int = FindObjectOfType<Planet_Information_Pluto>();
 			nept_int = FindObjectOfType<Planet_Information_Neptune>();
@@ -762,9 +764,9 @@ namespace InfimaGames.LowPolyShooterPack
 						venus_int.Show_UI();
 					}
 					else if (mars_int.planet_interact == true)
-					{
+
 						mars_int.Show_UI();
-					}
+
 					else if (jup_int.planet_interact == true)
 						jup_int.Show_UI();
 					else if (sat_int.planet_interact == true)
@@ -776,12 +778,14 @@ namespace InfimaGames.LowPolyShooterPack
 						nept_int.Show_UI();
 					else if (pluto_int.planet_interact == true)
 						pluto_int.Show_UI();
-
+					else if (sun_int.planet_interact == true)
+						sun_int.Show_UI();
 					break;
 			}
 		}
 		public void OnPress(InputAction.CallbackContext context)
 		{
+			sun_int = FindObjectOfType<the_sun>();
 			pluto_int = FindObjectOfType<Planet_Information_Pluto>();
 			nept_int = FindObjectOfType<Planet_Information_Neptune>();
 			uranus_int = FindObjectOfType<Planet_Information_Uranus>();
@@ -808,6 +812,7 @@ namespace InfimaGames.LowPolyShooterPack
 					uranus_int.Close_UI();
 					nept_int.Close_UI();
 					pluto_int.Close_UI();
+					sun_int.Close_UI();
 					break;
 			}
 		}
