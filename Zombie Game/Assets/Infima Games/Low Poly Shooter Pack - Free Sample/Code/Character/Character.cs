@@ -724,8 +724,10 @@ namespace InfimaGames.LowPolyShooterPack
 		Planet_Information_Neptune nept_int;
 		Planet_Information_Pluto pluto_int;
 		the_sun sun_int;
+		health_regen interact;
         public void OnInteract(InputAction.CallbackContext context)
 		{
+			interact = FindObjectOfType<health_regen>();
 			sun_int = FindObjectOfType<the_sun>();
 			bool interaction = false;
 			pluto_int = FindObjectOfType<Planet_Information_Pluto>();
@@ -747,6 +749,12 @@ namespace InfimaGames.LowPolyShooterPack
 					{
 						dmg.dmgincrease();
 					}
+
+					if(interact.health_interact==true)
+                    {
+						interact.health_increase();
+
+                    }
 
 					if (can_interact.planet_interact == true)
 					{

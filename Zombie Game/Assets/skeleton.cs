@@ -126,9 +126,6 @@ public class skeleton: MonoBehaviour
             }
 
 
-
-
-
             if (health <= 0f)
             {
 
