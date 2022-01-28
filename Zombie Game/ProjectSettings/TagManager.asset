@@ -7,6 +7,9 @@ TagManager:
   - enemy
   - Fire
   - Upgrade
+  - Concrete
+  - Earth Clouds
+  - start_game
   layers:
   - Default
   - TransparentFX

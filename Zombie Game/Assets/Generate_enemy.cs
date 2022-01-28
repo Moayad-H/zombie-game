@@ -28,7 +28,7 @@ public class Generate_enemy : MonoBehaviour
         //totalenemies = enemyAt1 + enemyAt2 + enemyAt3 + enemyAt4 + enemyAt5;
       //  spawner = FindObjectOfType<SpawnPoints>();
         //    StartCoroutine(EnemyDrop());
-        StartWave();
+       // StartWave();
     }
 
    //private void Update()
@@ -47,7 +47,7 @@ public class Generate_enemy : MonoBehaviour
         
        
     }
-    private void StartWave()
+    public void StartWave()
     {
         waveNumber = 1;
         enemySpawnwave = 1;
@@ -79,6 +79,7 @@ public class Generate_enemy : MonoBehaviour
             for (int i = 0; i < enemySpawnwave; i++)
             {
                EnemyDrop(theEnemy);
+                special_audio.SetActive(false);
 
             }
         }
